@@ -52,8 +52,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            if(GestionBD.getInstance(getApplicationContext()).retournerSiMatch("Mary Anderson", listView.getItemAtPosition(position).toString()))
+            if (GestionBD.getInstance(getApplicationContext()).retournerSiMatch("Mary Anderson", listView.getItemAtPosition(position).toString())) {
                 champReponse.setText("Bonne réponse");
+                champReponse.setBackgroundColor(Color.GREEN);
+            }
             else{
                 champReponse.setText("Mauvaise réponse");
                 champReponse.setBackgroundColor(Color.RED);
